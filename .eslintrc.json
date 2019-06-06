@@ -1,3 +1,6 @@
 {
-  "extends": ["react-app", "kentcdodds", "kentcdodds/jest", "kentcdodds/react"]
+  "extends": ["react-app", "kentcdodds", "kentcdodds/jest", "kentcdodds/react"],
+  "rules" : {
+    "space-in-brackets": ["error", "always"]
+  }
 }
