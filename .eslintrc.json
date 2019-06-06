@@ -1,0 +1,3 @@
+{
+  "extends": ["react-app", "kentcdodds", "kentcdodds/jest", "kentcdodds/react"]
+}
