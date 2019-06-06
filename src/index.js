@@ -4,14 +4,14 @@ import { Router } from '@reach/router';
 
 import './index.scss';
 
-import Component from './components/Component';
+import DevicesList from './components/DevicesList';
 import * as serviceWorker from './serviceWorker';
 
 const Dash = () => <div>Dash</div>;
 
 const App = () => (
   <Router>
-    <Component path="/" />
+    <DevicesList path="/" />
     <Dash path="dashboard" />
   </Router>
 );
