@@ -1,6 +1,6 @@
 {
   "extends": ["react-app", "kentcdodds", "kentcdodds/jest", "kentcdodds/react"],
   "rules" : {
-    "space-in-brackets": ["error", "always"]
+    "object-curly-spacing": ["error", "always"]
   }
 }
