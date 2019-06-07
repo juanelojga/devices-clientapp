@@ -2,6 +2,7 @@
   "extends": ["react-app", "kentcdodds", "kentcdodds/jest", "kentcdodds/react"],
   "rules": {
     "object-curly-spacing": ["error", "always"],
-    "semi": "error"
+    "semi": "error",
+    "camelcase": "never"
   }
 }

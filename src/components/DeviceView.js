@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DeviceView = ({ systemName, type, hddCapacity }) => (
+const DeviceView = ({ system_name, type, hdd_capacity }) => (
   <div>
-    <h2>{systemName}</h2>
+    <h2>{system_name}</h2>
     <p>{type}</p>
-    <p>{hddCapacity}</p>
+    <p>{hdd_capacity}</p>
   </div>
 );
 
 DeviceView.propTypes = {
-  systemName: PropTypes.string,
+  system_name: PropTypes.string,
   type: PropTypes.string,
-  hddCapacity: PropTypes.string
+  hdd_capacity: PropTypes.string
 };
 
 export default DeviceView;
