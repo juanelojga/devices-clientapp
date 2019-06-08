@@ -21,3 +21,30 @@ describe('filter by', () => {
     expect(result).toEqual([DEVICES[2]]);
   });
 });
+
+describe('sort by', () => {
+  test('it should sort by system name', () => {
+    const sortBy = 'system_name';
+    const result = utils.sortBy(sortBy, DEVICES.slice(0));
+    expect(result[0].system_name).toBe(DEVICES[1].system_name);
+    expect(result[1].system_name).toBe(DEVICES[2].system_name);
+    expect(result[2].system_name).toBe(DEVICES[0].system_name);
+  });
+
+  test('it should sort by type', () => {
+    const sortBy = 'type';
+    const result = utils.sortBy(sortBy, DEVICES.slice(0));
+    expect(result[0].type).toBe(DEVICES[1].type);
+    expect(result[1].type).toBe(DEVICES[2].type);
+    expect(result[2].type).toBe(DEVICES[0].type);
+  });
+
+  test('it should sort by hdd capacity', () => {
+    const sortBy = 'hdd_capacity';
+    const result = utils.sortBy(sortBy, DEVICES.slice(0));
+    console.log(result);
+    expect(result[0].hdd_capacity).toBe(DEVICES[0].hdd_capacity);
+    expect(result[1].hdd_capacity).toBe(DEVICES[1].hdd_capacity);
+    expect(result[2].hdd_capacity).toBe(DEVICES[2].hdd_capacity);
+  });
+});
