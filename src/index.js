@@ -6,7 +6,7 @@ import './index.scss';
 
 import DevicesContext from './context';
 import devicesReduces from './reducer';
-import Devices from './components/Devices';
+import MainView from './components/MainView';
 import * as serviceWorker from './serviceWorker';
 
 import { API_BASE_URL } from './configs/constants';
@@ -19,7 +19,7 @@ const App = () => {
     const getData = async () => {
       try {
         dispatch({
-          type: 'LOADING',
+          type: 'LOADING_DEVICES',
           payload: true
         });
         const response = await axios.get(`${API_BASE_URL}/devices`);
@@ -34,7 +34,7 @@ const App = () => {
         });
       } finally {
         dispatch({
-          type: 'LOADING',
+          type: 'LOADING_DEVICES',
           payload: false
         });
       }
@@ -44,7 +44,7 @@ const App = () => {
 
   return (
     <DevicesContext.Provider value={{ state, dispatch }}>
-      <Devices />
+      <MainView />
     </DevicesContext.Provider>
   );
 };

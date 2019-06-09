@@ -6,8 +6,10 @@ const DevicesContext = React.createContext({
   devices: [],
   sortCriteria: SORTING_OPTIONS[0],
   devicesToShow: [],
-  loading: false,
-  error: null
+  loadingDevices: false,
+  loadingDevice: false,
+  error: null,
+  selectedDeviceId: null
 });
 
 export default DevicesContext;

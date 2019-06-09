@@ -10,10 +10,15 @@ export default function reducer(state, action) {
         devices: action.payload,
         devicesToShow: sortBy(state.sortCriteria, action.payload)
       };
-    case 'LOADING':
+    case 'LOADING_DEVICES':
       return {
         ...state,
-        loading: action.payload
+        loadingDevices: action.payload
+      };
+    case 'LOADING_DEVICE':
+      return {
+        ...state,
+        loadingDevice: action.payload
       };
     case 'ERROR':
       toast.error(action.payload);
@@ -32,6 +37,19 @@ export default function reducer(state, action) {
         ...state,
         sortCriteria: action.payload,
         devicesToShow: sortBy(action.payload, state.devicesToShow)
+      };
+    case 'SET_SELECTED_DEVICE_ID':
+      return {
+        ...state,
+        selectedDeviceId: action.payload
+      };
+    case 'REMOVE_DEVICE':
+      return {
+        ...state,
+        devices: state.devices.filter(
+          device => device.id !== state.selectedDeviceId
+        ),
+        selectedDeviceId: null
       };
     default:
       return state;
