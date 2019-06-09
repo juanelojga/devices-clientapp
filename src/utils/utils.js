@@ -1,5 +1,9 @@
-export const filterByType = (filter, values) =>
-  values.filter(value => (filter === 'all' ? true : value.type === filter));
+import { DEVICE_TYPES } from '../configs/constants';
+
+export const filterByType = (criteria, values) =>
+  values.filter(value =>
+    criteria === DEVICE_TYPES[0] ? true : value.type === criteria.toUpperCase()
+  );
 
 export const sortBy = (criteria, values) =>
   values.sort((a, b) => {

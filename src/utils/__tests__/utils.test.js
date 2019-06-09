@@ -42,7 +42,6 @@ describe('sort by', () => {
   test('it should sort by hdd capacity', () => {
     const sortBy = 'hdd_capacity';
     const result = utils.sortBy(sortBy, DEVICES.slice(0));
-    console.log(result);
     expect(result[0].hdd_capacity).toBe(DEVICES[0].hdd_capacity);
     expect(result[1].hdd_capacity).toBe(DEVICES[1].hdd_capacity);
     expect(result[2].hdd_capacity).toBe(DEVICES[2].hdd_capacity);
