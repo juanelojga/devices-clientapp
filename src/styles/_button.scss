@@ -30,7 +30,7 @@
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
 
-  &--white {
+  &-white {
     background-color: $color-white;
     color: $color-grey-dark;
 
@@ -39,12 +39,21 @@
     }
   }
 
-  &--green {
+  &-green {
     background-color: $color-primary;
     color: $color-white;
 
     &::after {
       background-color: $color-primary;
+    }
+  }
+
+  &-red {
+    background-color: $color-secondary-dark;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-secondary-dark;
     }
   }
 

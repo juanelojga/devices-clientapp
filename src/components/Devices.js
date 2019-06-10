@@ -4,13 +4,15 @@ import PropTypes from 'prop-types';
 import Loading from './Loading';
 import Device from './Device';
 
+import styles from './Devices.module.scss';
+
 const Devices = ({
   loading,
   devices,
   handleRemoveDevice,
   handleEditDevice
 }) => (
-  <div>
+  <div className={styles.devices}>
     {loading ? (
       <Loading loading={loading} />
     ) : devices.length ? (

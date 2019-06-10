@@ -23,7 +23,7 @@ const DevicesList = () => {
 
   const [filterBy, setFilterBy] = useState(DEVICE_TYPES[0]);
   const [sortBy, setSortBy] = useState(SORTING_OPTIONS[0]);
-  const [showRemoveModal, setShowRemoveModal] = useState(false);
+  const [showRemoveModal, setShowRemoveModal] = useState(true);
   const [showCreateModal, setShowCreateModal] = useState({
     isEdit: false,
     show: false
@@ -161,7 +161,7 @@ const DevicesList = () => {
                   });
                   setShowCreateModal({ isEdit: false, show: true });
                 }}
-                className="btn btn--green"
+                className="btn btn-green"
               >
                 &#43;&nbsp;&nbsp;Create Device
               </button>
