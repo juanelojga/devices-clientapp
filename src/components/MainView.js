@@ -10,7 +10,7 @@ import RemoveDeviceModal from './RemoveDeviceModal';
 import CreateDeviceModal from './CreateDeviceModal';
 import Devices from './Devices';
 
-import './Devices.module.scss';
+import styles from './MainView.module.scss';
 
 import {
   DEVICE_TYPES,
@@ -120,37 +120,54 @@ const DevicesList = () => {
 
   return (
     <div>
-      <div>
-        <Filter
-          title="Device Type"
-          options={DEVICE_TYPES.map(type => ({
-            id: type,
-            name: startCase(type)
-          }))}
-          value={filterBy}
-          handleChange={e => setFilterBy(e.target.value)}
-        />
-        <Filter
-          title="Sort By"
-          options={SORTING_OPTIONS.map(option => ({
-            id: option,
-            name: startCase(option)
-          }))}
-          value={sortBy}
-          handleChange={e => setSortBy(e.target.value)}
-        />
-        <button
-          onClick={() => {
-            dispatch({
-              type: 'SET_SELECTED_DEVICE',
-              payload: {}
-            });
-            setShowCreateModal({ isEdit: false, show: true });
-          }}
-        >
-          Create Device
-        </button>
+      <div className="u-center-text">
+        <h1 className={styles.heading}>Manage your devices</h1>
       </div>
+      <section>
+        <div className="row">
+          <div className="col-1-of-3">
+            <div className={styles.feature}>
+              <Filter
+                title="Device Type"
+                options={DEVICE_TYPES.map(type => ({
+                  id: type,
+                  name: startCase(type)
+                }))}
+                value={filterBy}
+                handleChange={e => setFilterBy(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="col-1-of-3">
+            <div className={styles.feature}>
+              <Filter
+                title="Sort By"
+                options={SORTING_OPTIONS.map(option => ({
+                  id: option,
+                  name: startCase(option)
+                }))}
+                value={sortBy}
+                handleChange={e => setSortBy(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="col-1-of-3">
+            <div className={styles.feature}>
+              <button
+                onClick={() => {
+                  dispatch({
+                    type: 'SET_SELECTED_DEVICE',
+                    payload: {}
+                  });
+                  setShowCreateModal({ isEdit: false, show: true });
+                }}
+              >
+                Create Device
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
       <Devices
         loading={state.loadingDevices}
         devices={state.devicesToShow}
