@@ -38,18 +38,30 @@ export default function reducer(state, action) {
         sortCriteria: action.payload,
         devicesToShow: sortBy(action.payload, state.devicesToShow)
       };
-    case 'SET_SELECTED_DEVICE_ID':
+    case 'SET_SELECTED_DEVICE':
       return {
         ...state,
-        selectedDeviceId: action.payload
+        selectedDevice: action.payload
       };
     case 'REMOVE_DEVICE':
       return {
         ...state,
         devices: state.devices.filter(
-          device => device.id !== state.selectedDeviceId
+          device => device.id !== state.selectedDevice.id
         ),
-        selectedDeviceId: null
+        selectedDevice: {}
+      };
+    case 'ADD_DEVICE':
+      return {
+        ...state,
+        devices: [...state.devices, action.payload]
+      };
+    case 'EDIT_DEVICE':
+      return {
+        ...state,
+        devices: state.devices.map(device =>
+          device.id === action.payload.id ? action.payload : device
+        )
       };
     default:
       return state;

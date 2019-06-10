@@ -4,9 +4,8 @@ import PropTypes from 'prop-types';
 import RemoveDeviceForm from './RemoveDeviceForm';
 import Modal from './Modal';
 
-const RemoveDeviceModal = ({ handleClose, show, handleRemove, loading }) => (
+const RemoveDeviceModal = ({ handleClose, handleRemove, loading }) => (
   <Modal
-    show={show}
     handleClose={handleClose}
     children={
       <RemoveDeviceForm
@@ -20,7 +19,6 @@ const RemoveDeviceModal = ({ handleClose, show, handleRemove, loading }) => (
 
 RemoveDeviceModal.propTypes = {
   handleClose: PropTypes.func,
-  show: PropTypes.bool,
   handleRemove: PropTypes.func,
   loading: PropTypes.bool
 };

@@ -9,7 +9,7 @@ const DevicesContext = React.createContext({
   loadingDevices: false,
   loadingDevice: false,
   error: null,
-  selectedDeviceId: null
+  selectedDevice: {}
 });
 
 export default DevicesContext;

@@ -3,16 +3,9 @@ import PropTypes from 'prop-types';
 
 import styles from './Modal.module.scss';
 
-const Modal = ({ handleClose, show, children }) => {
-  const className = [styles.modal];
-  if (show) {
-    className.push(styles.show);
-  } else {
-    className.push(styles.hide);
-  }
-
+const Modal = ({ handleClose, children }) => {
   return (
-    <div className={className.join(' ')}>
+    <div className={styles.modal}>
       <section className={styles.main}>
         {children}
         <button onClick={handleClose}>close</button>
@@ -23,7 +16,6 @@ const Modal = ({ handleClose, show, children }) => {
 
 Modal.propTypes = {
   handleClose: PropTypes.func,
-  show: PropTypes.bool,
   children: PropTypes.element
 };
 

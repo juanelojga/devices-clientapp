@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 import Loading from './Loading';
 import Device from './Device';
 
-const Devices = ({ loading, devices, handleRemoveDevice }) => (
+const Devices = ({
+  loading,
+  devices,
+  handleRemoveDevice,
+  handleEditDevice
+}) => (
   <div>
     {loading ? (
       <Loading loading={loading} />
@@ -15,7 +20,8 @@ const Devices = ({ loading, devices, handleRemoveDevice }) => (
           system_name={device.system_name}
           type={device.type}
           hdd_capacity={device.hdd_capacity}
-          onRemoveDevice={() => handleRemoveDevice(device.id)}
+          handleRemoveDevice={() => handleRemoveDevice(device)}
+          handleEditDevice={() => handleEditDevice(device)}
         />
       ))
     ) : (
@@ -27,7 +33,8 @@ const Devices = ({ loading, devices, handleRemoveDevice }) => (
 Devices.propTypes = {
   loading: PropTypes.bool,
   devices: PropTypes.array,
-  handleRemoveDevice: PropTypes.func
+  handleRemoveDevice: PropTypes.func,
+  handleEditDevice: PropTypes.func
 };
 
 export default Devices;
