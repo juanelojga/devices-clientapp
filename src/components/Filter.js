@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styles from './Filter.module.scss';
+
 const Filter = ({ title, options, value, handleChange }) => (
-  <div>
+  <div className={styles.filter}>
     <label>{title}:&nbsp;</label>
     <select value={value} onChange={handleChange}>
       {options.map(value => (

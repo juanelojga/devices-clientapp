@@ -1,0 +1,20 @@
+@import 'styles/variables';
+
+.filter {
+  height: 3rem;
+  overflow: hidden;
+  width: 22rem;
+  font-size: 1.1rem;
+  margin: auto;
+
+  & select {
+    background: transparent;
+    border: 0.1rem solid $color-primary;
+    height: 3rem;
+    width: 15rem;
+    font-size: 1.2rem;
+    padding: 0.4rem; /* If you add too much padding here, the options won't show in IE */
+    border-radius: 0.5rem;
+    background-color: $color-white;
+  }
+}

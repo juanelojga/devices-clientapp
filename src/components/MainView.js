@@ -126,7 +126,7 @@ const DevicesList = () => {
       <section>
         <div className="row">
           <div className="col-1-of-3">
-            <div className={styles.feature}>
+            <div className={styles.filterContainer}>
               <Filter
                 title="Device Type"
                 options={DEVICE_TYPES.map(type => ({
@@ -139,7 +139,7 @@ const DevicesList = () => {
             </div>
           </div>
           <div className="col-1-of-3">
-            <div className={styles.feature}>
+            <div className={styles.filterContainer}>
               <Filter
                 title="Sort By"
                 options={SORTING_OPTIONS.map(option => ({
@@ -152,7 +152,7 @@ const DevicesList = () => {
             </div>
           </div>
           <div className="col-1-of-3">
-            <div className={styles.feature}>
+            <div className={styles.filterContainer}>
               <button
                 onClick={() => {
                   dispatch({
@@ -161,8 +161,9 @@ const DevicesList = () => {
                   });
                   setShowCreateModal({ isEdit: false, show: true });
                 }}
+                className="btn btn--green"
               >
-                Create Device
+                &#43;&nbsp;&nbsp;Create Device
               </button>
             </div>
           </div>
