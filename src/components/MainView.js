@@ -23,7 +23,7 @@ const DevicesList = () => {
 
   const [filterBy, setFilterBy] = useState(DEVICE_TYPES[0]);
   const [sortBy, setSortBy] = useState(SORTING_OPTIONS[0]);
-  const [showRemoveModal, setShowRemoveModal] = useState(true);
+  const [showRemoveModal, setShowRemoveModal] = useState(false);
   const [showCreateModal, setShowCreateModal] = useState({
     isEdit: false,
     show: false

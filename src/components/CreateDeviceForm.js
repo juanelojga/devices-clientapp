@@ -4,6 +4,8 @@ import { isEmpty, startCase, snakeCase, isNaN } from 'lodash';
 
 import ConfirmationButton from './ConfirmationButton';
 
+import styles from './CreateDeviceForm.module.scss';
+
 import { DEVICE_TYPES } from '../configs/constants';
 
 const CreateDeviceForm = ({
@@ -41,48 +43,73 @@ const CreateDeviceForm = ({
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <div>
-        <label>System Name</label>
-        <input
-          type="text"
-          value={systemName}
-          onChange={e => setSystemName(e.target.value)}
-          className={validationErrors['systemName'] ? 'has-error' : null}
-        />
-      </div>
-      <div>
-        <label>Type</label>
-        <select
-          value={systemType}
-          onChange={e => setSystemType(e.target.value)}
-          className={validationErrors['systemType'] ? 'has-error' : null}
-        >
-          <option value="" />
-          {DEVICE_TYPES.slice(1).map(deviceType => (
-            <option value={deviceType} key={deviceType}>
-              {startCase(deviceType)}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <label>HDD Capacity</label>
-        <input
-          type="text"
-          value={hddCapacity}
-          onChange={e => setHddCapacity(e.target.value)}
-          className={validationErrors['hddCapacity'] ? 'has-error' : null}
-        />
-      </div>
-      <ConfirmationButton
-        type="submit"
-        disabled={loading}
-        loading={loading}
-        text="Submit"
-      />
-      <button onClick={handleClose}>Close</button>
-    </form>
+    <div>
+      <h3>Device Form</h3>
+      <form onSubmit={onSubmit} className={styles.form}>
+        <div className={styles.group}>
+          <input
+            type="text"
+            value={systemName}
+            onChange={e => {
+              setValidationErrors({});
+              setSystemName(e.target.value);
+            }}
+            placeholder="System Name"
+          />
+          <label>System Name</label>
+          {validationErrors['systemName'] ? (
+            <p className={styles.error}>Invalid System Name</p>
+          ) : null}
+        </div>
+        <div className={styles.group}>
+          <select
+            value={systemType}
+            onChange={e => {
+              setValidationErrors({});
+              setSystemType(e.target.value);
+            }}
+          >
+            <option value="" />
+            {DEVICE_TYPES.slice(1).map(deviceType => (
+              <option value={deviceType} key={deviceType}>
+                {startCase(deviceType)}
+              </option>
+            ))}
+          </select>
+          <label>Type</label>
+          {validationErrors['systemType'] ? (
+            <p className={styles.error}>Invalid Type</p>
+          ) : null}
+        </div>
+        <div className={styles.group}>
+          <input
+            type="text"
+            value={hddCapacity}
+            onChange={e => {
+              setValidationErrors({});
+              setHddCapacity(e.target.value);
+            }}
+            placeholder="HDD Capacity"
+          />
+          <label>HDD Capacity</label>
+          {validationErrors['hddCapacity'] ? (
+            <p className={styles.error}>Invalid HDD Capacity</p>
+          ) : null}
+        </div>
+        <div className={styles.buttons}>
+          <button onClick={handleClose} className="btn btn-red">
+            Close
+          </button>
+          &nbsp;&nbsp;
+          <ConfirmationButton
+            type="submit"
+            disabled={loading}
+            loading={loading}
+            text="Confirm"
+          />
+        </div>
+      </form>
+    </div>
   );
 };
 

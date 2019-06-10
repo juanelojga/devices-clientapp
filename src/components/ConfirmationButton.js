@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ClipLoader } from 'react-spinners';
 
+import styles from './ConfirmationButton.module.scss';
+
 const ConfirmationButton = ({
   loading,
   text = 'Yes',
@@ -9,17 +11,24 @@ const ConfirmationButton = ({
   type = 'button',
   disabled
 }) => (
-  <button onClick={handleClick} disabled={!!disabled} type={type}>
+  <button
+    onClick={handleClick}
+    disabled={!!disabled}
+    type={type}
+    className="btn btn-green"
+  >
     {text}
     {loading ? (
-      <span>
+      <span className={styles.container}>
         &nbsp;&nbsp;
         <ClipLoader
-          sizeUnit={'px'}
-          size={15}
-          color={'#123abc'}
-          loading={loading}
+          css={{ position: 'absolute', top: 0 }}
+          sizeUnit={'rem'}
+          size={1.5}
+          color={'#fff'}
+          loading={!loading}
         />
+        &nbsp;&nbsp;
       </span>
     ) : null}
   </button>

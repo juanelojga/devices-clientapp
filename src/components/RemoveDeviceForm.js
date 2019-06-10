@@ -6,9 +6,10 @@ import ConfirmationButton from './ConfirmationButton';
 const RemoveDeviceForm = ({ handleClose, handleRemove, loading }) => (
   <div>
     <h3>Are you sure that you want to remove this device?</h3>
-    <button onClick={handleClose} disabled={loading}>
+    <button onClick={handleClose} disabled={loading} className="btn btn-red">
       No
     </button>
+    &nbsp;&nbsp;
     <ConfirmationButton
       text="Yes"
       handleClick={handleRemove}

@@ -8,7 +8,9 @@ const Modal = ({ handleClose, children }) => {
     <div className={styles.modal}>
       <section className={styles.main}>
         {children}
-        <button onClick={handleClose}>close</button>
+        <button onClick={handleClose} className={styles.close}>
+          close
+        </button>
       </section>
     </div>
   );
