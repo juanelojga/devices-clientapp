@@ -22,9 +22,9 @@ const Devices = ({
         <Device
           key={device.id}
           deviceId={device.id}
-          system_name={device.system_name}
+          systemName={device.system_name}
           type={device.type}
-          hdd_capacity={device.hdd_capacity}
+          hddCapacity={device.hdd_capacity}
           handleRemoveDevice={() => handleRemoveDevice(device)}
           handleEditDevice={() => handleEditDevice(device)}
         />
