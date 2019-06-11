@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test  1`] = `
+<div>
+  <div>
+    <h3>
+      Device Form
+    </h3>
+    <form
+      class="form"
+    >
+      <div
+        class="group"
+      >
+        <input
+          placeholder="System Name"
+          type="text"
+          value="SUSAN-DESKTOP"
+        />
+        <label>
+          System Name
+        </label>
+      </div>
+      <div
+        class="group"
+      >
+        <select>
+          <option
+            value=""
+          />
+          <option
+            value="windows_workstation"
+          >
+            Windows Workstation
+          </option>
+          <option
+            value="mac"
+          >
+            Mac
+          </option>
+          <option
+            value="windows_server"
+          >
+            Windows Server
+          </option>
+        </select>
+        <label>
+          Type
+        </label>
+      </div>
+      <div
+        class="group"
+      >
+        <input
+          placeholder="HDD Capacity"
+          type="text"
+          value="128 GB"
+        />
+        <label>
+          HDD Capacity
+        </label>
+      </div>
+      <div
+        class="buttons"
+      >
+        <button
+          class="btn btn-red"
+        >
+          Close
+        </button>
+          
+        <button
+          class="btn btn-green"
+          type="submit"
+        >
+          Confirm
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`snapshot test empty form 1`] = `
+<div>
+  <div>
+    <h3>
+      Device Form
+    </h3>
+    <form
+      class="form"
+    >
+      <div
+        class="group"
+      >
+        <input
+          placeholder="System Name"
+          type="text"
+          value=""
+        />
+        <label>
+          System Name
+        </label>
+      </div>
+      <div
+        class="group"
+      >
+        <select>
+          <option
+            value=""
+          />
+          <option
+            value="windows_workstation"
+          >
+            Windows Workstation
+          </option>
+          <option
+            value="mac"
+          >
+            Mac
+          </option>
+          <option
+            value="windows_server"
+          >
+            Windows Server
+          </option>
+        </select>
+        <label>
+          Type
+        </label>
+      </div>
+      <div
+        class="group"
+      >
+        <input
+          placeholder="HDD Capacity"
+          type="text"
+          value=""
+        />
+        <label>
+          HDD Capacity
+        </label>
+      </div>
+      <div
+        class="buttons"
+      >
+        <button
+          class="btn btn-red"
+        >
+          Close
+        </button>
+          
+        <button
+          class="btn btn-green"
+          type="submit"
+        >
+          Confirm
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;

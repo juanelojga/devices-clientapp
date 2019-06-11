@@ -8,7 +8,8 @@ const DeviceView = ({
   type,
   hdd_capacity,
   handleRemoveDevice,
-  handleEditDevice
+  handleEditDevice,
+  deviceId
 }) => (
   <div className="row">
     <div className={styles.device}>
@@ -17,11 +18,19 @@ const DeviceView = ({
         <p>{type}</p>
         <p>{hdd_capacity}</p>
         <div className={styles.actions}>
-          <button onClick={handleRemoveDevice} className="btn btn-red">
+          <button
+            onClick={handleRemoveDevice}
+            className="btn btn-red"
+            data-testid={`remove-${deviceId}`}
+          >
             Remove
           </button>
           &nbsp;&nbsp;
-          <button onClick={handleEditDevice} className="btn btn-green">
+          <button
+            onClick={handleEditDevice}
+            className="btn btn-green"
+            data-testid={`edit-${deviceId}`}
+          >
             Edit
           </button>
         </div>
@@ -31,6 +40,7 @@ const DeviceView = ({
 );
 
 DeviceView.propTypes = {
+  deviceId: PropTypes.string,
   system_name: PropTypes.string,
   type: PropTypes.string,
   hdd_capacity: PropTypes.string,

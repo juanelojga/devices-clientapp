@@ -21,6 +21,7 @@ const Devices = ({
       devices.map(device => (
         <Device
           key={device.id}
+          deviceId={device.id}
           system_name={device.system_name}
           type={device.type}
           hdd_capacity={device.hdd_capacity}

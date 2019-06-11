@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test 1`] = `
+<div>
+  <div
+    class="devices"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="device"
+      >
+        <div
+          class="text"
+        >
+          <h2
+            class="heading"
+          >
+            SUSAN-DESKTOP
+          </h2>
+          <p>
+            WINDOWS_WORKSTATION
+          </p>
+          <p>
+            128 GB
+          </p>
+          <div
+            class="actions"
+          >
+            <button
+              class="btn btn-red"
+              data-testid="remove-1"
+            >
+              Remove
+            </button>
+              
+            <button
+              class="btn btn-green"
+              data-testid="edit-1"
+            >
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="device"
+      >
+        <div
+          class="text"
+        >
+          <h2
+            class="heading"
+          >
+            MAC-LOCAL-FREDDY
+          </h2>
+          <p>
+            MAC
+          </p>
+          <p>
+            256 GB
+          </p>
+          <div
+            class="actions"
+          >
+            <button
+              class="btn btn-red"
+              data-testid="remove-2"
+            >
+              Remove
+            </button>
+              
+            <button
+              class="btn btn-green"
+              data-testid="edit-2"
+            >
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="device"
+      >
+        <div
+          class="text"
+        >
+          <h2
+            class="heading"
+          >
+            SMART-SERVER
+          </h2>
+          <p>
+            WINDOWS_SERVER
+          </p>
+          <p>
+            1024 GB
+          </p>
+          <div
+            class="actions"
+          >
+            <button
+              class="btn btn-red"
+              data-testid="remove-3"
+            >
+              Remove
+            </button>
+              
+            <button
+              class="btn btn-green"
+              data-testid="edit-3"
+            >
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`snapshot test, empty devices 1`] = `
+<div>
+  <div
+    class="devices"
+  >
+    <div
+      class="u-center-text"
+    >
+      <h2>
+        No Results were found.
+      </h2>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`snapshot test, loading 1`] = `
+<div>
+  <div
+    class="devices"
+  >
+    <div
+      class="u-center-text"
+    >
+      <div
+        class="css-0"
+      >
+        <div
+          class="css-1w7hh59-style"
+        />
+        <div
+          class="css-1i0ut9c-style"
+        />
+        <div
+          class="css-1s2rl4q-style"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
