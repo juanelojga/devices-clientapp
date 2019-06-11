@@ -1,6 +1,7 @@
 import React, { useContext, useReducer, useEffect } from 'react';
 import { render } from 'react-dom';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
 
 import './index.scss';
 
@@ -28,9 +29,11 @@ const App = () => {
           payload: response.data
         });
       } catch {
+        const message = "List of devices couldn't be fetched";
+        toast.error(message);
         dispatch({
           type: 'ERROR',
-          payload: "List of devices couldn't be fetched"
+          payload: message
         });
       } finally {
         dispatch({
@@ -45,6 +48,7 @@ const App = () => {
   return (
     <DevicesContext.Provider value={{ state, dispatch }}>
       <MainView />
+      <ToastContainer />
     </DevicesContext.Provider>
   );
 };

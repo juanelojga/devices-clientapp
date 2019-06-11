@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test 1`] = `
+<div>
+  <div>
+    <h3>
+      Are you sure that you want to remove this device?
+    </h3>
+    <button
+      class="btn btn-red"
+    >
+      No
+    </button>
+      
+    <button
+      class="btn btn-green"
+      type="button"
+    >
+      Yes
+    </button>
+  </div>
+</div>
+`;
+
+exports[`snapshot test loading 1`] = `
+<div>
+  <div>
+    <h3>
+      Are you sure that you want to remove this device?
+    </h3>
+    <button
+      class="btn btn-red"
+      disabled=""
+    >
+      No
+    </button>
+      
+    <button
+      class="btn btn-green"
+      disabled=""
+      type="button"
+    >
+      Yes
+      <span
+        class="container"
+      >
+          
+          
+      </span>
+    </button>
+  </div>
+</div>
+`;

@@ -1,6 +1,6 @@
 import * as utils from '../utils';
 
-import { DEVICES } from './mocks';
+import { DEVICES } from '../mocks';
 
 describe('filter by', () => {
   test('it should show all devices', () => {

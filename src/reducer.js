@@ -1,5 +1,3 @@
-import { toast } from 'react-toastify';
-
 import { filterByType, sortBy } from './utils/utils';
 
 export default function reducer(state, action) {
@@ -21,7 +19,6 @@ export default function reducer(state, action) {
         loadingDevice: action.payload
       };
     case 'ERROR':
-      toast.error(action.payload);
       return {
         ...state,
         error: action.payload
@@ -36,7 +33,7 @@ export default function reducer(state, action) {
       return {
         ...state,
         sortCriteria: action.payload,
-        devicesToShow: sortBy(action.payload, state.devicesToShow)
+        devicesToShow: sortBy(action.payload, state.devicesToShow.slice(0))
       };
     case 'SET_SELECTED_DEVICE':
       return {

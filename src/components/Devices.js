@@ -14,7 +14,9 @@ const Devices = ({
 }) => (
   <div className={styles.devices}>
     {loading ? (
-      <Loading loading={loading} />
+      <div className="u-center-text">
+        <Loading loading={loading} />
+      </div>
     ) : devices.length ? (
       devices.map(device => (
         <Device
@@ -27,7 +29,9 @@ const Devices = ({
         />
       ))
     ) : (
-      <h2>No Results were found.</h2>
+      <div className="u-center-text">
+        <h2>No Results were found.</h2>
+      </div>
     )}
   </div>
 );

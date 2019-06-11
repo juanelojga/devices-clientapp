@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import startCase from 'lodash/startCase';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
@@ -187,7 +187,6 @@ const DevicesList = () => {
           setShowCreateModal({ isEdit: true, show: true });
         }}
       />
-      <ToastContainer />
       {showRemoveModal ? (
         <RemoveDeviceModal
           handleClose={() => setShowRemoveModal(false)}
